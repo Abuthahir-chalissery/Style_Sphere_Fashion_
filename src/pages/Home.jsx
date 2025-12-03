@@ -35,7 +35,7 @@ export default function Home() {
             {/* 3 */}
             <div className='hidden sm:block w-full h-auto bg-[#CACDD7] rounded-xl'>
                 <div className='w-full h-full flex justify-center items-end'>
-                    <img className=' w-100% h-auto' src="./image3.png" alt="" />
+                    <img className=' w-100% h-auto' src="/image3.png" alt="" />
                 </div>
             </div>
         </div>
