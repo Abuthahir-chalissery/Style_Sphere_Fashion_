@@ -1,9 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
+import Deals from '../components/Deals'
+import RecentProducts from '../components/RecentProducts'
 
 export default function Home() {
   return (
     <>
-    <div className='w-full h-auto flex flex-col gap-10'>
+    <Navbar />
+    <div className='w-full p-5 h-auto flex flex-col  gap-10 max-w-100 sm:max-w-270'>
         <div className='w-full h-auto grid grid-cols-1 sm:grid-cols-3 gap-5'>
             {/* 1 */}
             <div className='hidden sm:block w-full h-auto bg-[#CACDD7] rounded-xl'>
@@ -24,7 +30,8 @@ export default function Home() {
                     </div>
                     <div className='flex flex-col justify-center gap-1'>
                         <h1 className='text-xs font-semibold text-gray-500'>NEW COLLECTIONS</h1>
-                        <button className='border rounded-md font-semibold text-white text-xs bg-black p-1'>SHOP NOW</button>
+                        <Link to={'/product-lists'}><button className='w-full cursor-pointer border rounded-md font-semibold text-white text-xs bg-black p-2'>SHOP NOW</button></Link>
+                        
                     </div>
                 </div>
                 <div className='w-full h-auto flex items-end justify-center'>
@@ -41,13 +48,15 @@ export default function Home() {
         </div>
 
         <div className='w-full h-auto grid grid-cols-4 sm:flex justify-center gap-5 sm:gap-10 place-items-center place-content-center'>
-            <img className='w-20 h-4'  src="./chanel.png" alt="" />
-            <img className='w-20 h-3' src="./louis.png" alt="" />
-            <img className='w-20 h-4' src="./prada.png" alt="" />
-            <img className='w-20 h-3' src="./calvin.png" alt="" />
+            <img className='w-20 sm:h-4'  src="./chanel.png" alt="" />
+            <img className='w-20 sm:h-4' src="./louis.png" alt="" />
+            <img className='w-20 sm:h-4' src="./prada.png" alt="" />
+            <img className='w-20 sm:h-4' src="./calvin.png" alt="" />
             <img className='hidden sm:block w-20 h-4 ' src="./denim.png" alt="" />
         </div>  
     </div>
+    <Deals/>
+    <Footer/>
     </>
-  )
+)
 }

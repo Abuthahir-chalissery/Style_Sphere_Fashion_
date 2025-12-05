@@ -1,17 +1,37 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
+import './Styles/global.css'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
+import { BrowserRouter as Router , Routes , Route, data} from 'react-router-dom'
+import ProductList from './pages/ProductList'
+import Deals from './components/Deals'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [product, setProducts] = useState([])
+
+  useEffect(()=> {
+
+    fetch('https://fakestoreapi.com/products')
+    .then(response => response.json())
+    .then(product => setProducts(product));
+
+  },[])
+  
+
+
 
   return (
     <>
-      <div className='w-full h-screen bg-gray-200 smd:bg-gray-100 p-5 flex justify-center '>
-        <div className='w-full h-auto max-w-100 sm:max-w-270 flex flex-col gap-10'>
-          <Navbar/> 
-          <Home/>
+      <div className='w-full h-auto md:bg-gray-100  flex justify-center'>
+        <div className='w-full flex flex-col items-center h-auto gap-5'>
+          <Router>
+            <Routes>
+              <Route exact path='/' element={<Home/>} />
+              <Route exact path='/product-lists' element={<ProductList product={setProducts}/>} />
+            </Routes>
+          </Router>
         </div>
       </div>
     </>
