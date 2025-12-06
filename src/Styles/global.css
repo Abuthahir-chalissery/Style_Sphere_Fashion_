@@ -14,3 +14,11 @@
     font-weight: 300;
     font-style: normal;
 }
+
+
+.product-img{
+    object-fit: contain;
+    flex: auto;
+    width: 100px;
+    height: 190px;
+}

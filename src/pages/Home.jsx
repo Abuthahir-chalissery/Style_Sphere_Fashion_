@@ -5,7 +5,8 @@ import Footer from '../components/Footer'
 import Deals from '../components/Deals'
 import RecentProducts from '../components/RecentProducts'
 
-export default function Home() {
+export default function Home({product}) {
+    
   return (
     <>
     <Navbar />
@@ -56,6 +57,7 @@ export default function Home() {
         </div>  
     </div>
     <Deals/>
+    <RecentProducts product={product}/>
     <Footer/>
     </>
 )

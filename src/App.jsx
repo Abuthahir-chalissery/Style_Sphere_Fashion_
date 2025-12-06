@@ -28,8 +28,8 @@ function App() {
         <div className='w-full flex flex-col items-center h-auto gap-5'>
           <Router>
             <Routes>
-              <Route exact path='/' element={<Home/>} />
-              <Route exact path='/product-lists' element={<ProductList product={setProducts}/>} />
+              <Route exact path='/' element={<Home product={product}/>} />
+              <Route exact path='/product-lists' element={<ProductList product={product}/>} />
             </Routes>
           </Router>
         </div>
