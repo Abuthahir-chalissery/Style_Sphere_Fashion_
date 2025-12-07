@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Deals() {
   return (
-    <div className='w-full p-5 lg:p-10  mt-2 h-auto bg-gradient-to-t flex justify-center from-gray-300  to-gray-200 '>
+    <div className='w-full p-5 lg:p-10  mt-2 h-auto bg-linear-to-t flex justify-center from-gray-300  to-gray-200 '>
         <div className='w-full h-auto grid  grid-cols-1 gap-10  p-1 sm:p-3 justify-center  md:grid-cols-2 max-w-100 sm:max-w-270'>
             {/* Left */}
             <div className='w-full  h-full grid md:grid-rows-2 gap-10 '>

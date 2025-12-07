@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function Navbar() {
   return (
-    <div className='w-full bg-gray-300 shadow-sm shadow-gray-400  sticky top-0  poppins-regular flex justify-center'>
+    <div className='w-full z-50 bg-gray-300 shadow-sm shadow-gray-400  sticky top-0  poppins-regular flex justify-center'>
         <div className='w-full  flex flex-col p-5 gap-10 max-w-100 sm:max-w-270'>
             {/* Logo and Search button */}
             <div className=' flex justify-between'>

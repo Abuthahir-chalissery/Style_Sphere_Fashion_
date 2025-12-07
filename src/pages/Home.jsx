@@ -5,7 +5,8 @@ import Footer from '../components/Footer'
 import Deals from '../components/Deals'
 import RecentProducts from '../components/RecentProducts'
 
-export default function Home({product}) {
+export default function Home({product,Loading,error}) {
+
     
   return (
     <>
@@ -31,7 +32,7 @@ export default function Home({product}) {
                     </div>
                     <div className='flex flex-col justify-center gap-1'>
                         <h1 className='text-xs font-semibold text-gray-500'>NEW COLLECTIONS</h1>
-                        <Link to={'/product-lists'}><button className='w-full cursor-pointer border rounded-md font-semibold text-white text-xs bg-black p-2'>SHOP NOW</button></Link>
+                        <Link to={'/product-lists'}><button onClick={Loading= true} className='w-full cursor-pointer border rounded-md font-semibold text-white text-xs bg-black p-2'>SHOP NOW</button></Link>
                         
                     </div>
                 </div>
@@ -57,7 +58,7 @@ export default function Home({product}) {
         </div>  
     </div>
     <Deals/>
-    <RecentProducts product={product}/>
+    <RecentProducts product={product} error={error}/>
     <Footer/>
     </>
 )

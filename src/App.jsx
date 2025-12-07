@@ -6,19 +6,36 @@ import Home from './pages/Home'
 import { BrowserRouter as Router , Routes , Route, data} from 'react-router-dom'
 import ProductList from './pages/ProductList'
 import Deals from './components/Deals'
+import Loading from './components/Loading'
 
 function App() {
 
   const [product, setProducts] = useState([])
+  const [error , setError] = useState(null)
+  const [loading, setLoading] = useState(true)
+
 
   useEffect(()=> {
 
-    fetch('https://fakestoreapi.com/products')
-    .then(response => response.json())
-    .then(product => setProducts(product));
+    const getProducts = async () => {
+      try{
+        const response = await fetch('https://fakestoreapi.com/products');
+        const data = await response.json()
+        setProducts(data);
+      }catch (error) {
+        setError("Products Not found...")
+      }finally{
+        setTimeout( () => {
+          setLoading(false)
+        },1000)
+      }
+    }
+
+    getProducts();
 
   },[])
-  
+
+  if (loading) return <Loading/>
 
 
 
@@ -28,8 +45,8 @@ function App() {
         <div className='w-full flex flex-col items-center h-auto gap-5'>
           <Router>
             <Routes>
-              <Route exact path='/' element={<Home product={product}/>} />
-              <Route exact path='/product-lists' element={<ProductList product={product}/>} />
+              <Route exact path='/' element={<Home product={product} loading ={loading} error={error}/>} />
+              <Route exact path='/product-lists'  element={<ProductList product={product} error={error}/>} />
             </Routes>
           </Router>
         </div>
