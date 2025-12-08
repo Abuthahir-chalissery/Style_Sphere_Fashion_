@@ -10,19 +10,19 @@ export default function Navbar() {
                 <Link to={'/'}><h1 className='text- sm:text-3xl font-semibold unbounded-logo-text cursor-pointer'>STYLE-SPHERE</h1></Link>
                 <div className='w-30 sm:w-auto flex sm:h-9 border border-gray-500 rounded-3xl pl-1 pr-1 sm:pl-5 sm:pr-2 justify-center items-center'>
                     <input className='w-full  text-sm  outline-none' type="text" placeholder='Search...' />
-                    <img className='cursor-pointer size-5 sm:size-6' src="./search.png" alt="" />
+                    <img className='cursor-pointer size-5 sm:size-6' src="/search.png" alt="" />
                 </div>
             </div>
 
             {/* Nav Butttons */}
             <div className='capitalize flex justify-between text-base items-center'>
                 <div className='flex gap-3 items-center '>
-                    <img className='cursor-pointer w-5 h-4' src="./bars.png" alt="" />
+                    <img className='cursor-pointer w-5 h-4' src="/bars.png" alt="" />
                     <h1 className='text-lg'>all</h1>
                 </div>
                 <div className='hidden sm:block'>
                     <div className='flex  gap-9 '>
-                        <Link to={'/'}><p className='cursor-pointer'>home</p></Link>
+                        <Link to={'/'}><p className='cursor-pointer'>Home</p></Link>
                         <p className='cursor-pointer'>Deals</p>
                         <p className='cursor-pointer'>New Arrivals</p>
                         <div className='flex gap-1'>
@@ -40,6 +40,6 @@ export default function Navbar() {
             </div>
         </div>
     </div>
-  )
+)
 }
         

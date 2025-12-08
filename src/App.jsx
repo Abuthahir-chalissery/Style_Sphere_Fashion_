@@ -3,10 +3,11 @@ import './App.css'
 import './Styles/global.css'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
-import { BrowserRouter as Router , Routes , Route, data} from 'react-router-dom'
+import { BrowserRouter as Router , Routes , Route} from 'react-router-dom'
 import ProductList from './pages/ProductList'
 import Deals from './components/Deals'
 import Loading from './components/Loading'
+import ProductDetails from './pages/ProductDetails'
 
 function App() {
 
@@ -45,8 +46,9 @@ function App() {
         <div className='w-full flex flex-col items-center h-auto gap-5'>
           <Router>
             <Routes>
-              <Route exact path='/' element={<Home product={product} loading ={loading} error={error}/>} />
+              <Route exact path='/' element={<Home product={product} loading={loading} error={error}/>} />
               <Route exact path='/product-lists'  element={<ProductList product={product} error={error}/>} />
+              <Route path='/product-lists/:id' element={<ProductDetails id={product} />} />
             </Routes>
           </Router>
         </div>

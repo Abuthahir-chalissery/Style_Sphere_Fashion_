@@ -1,14 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Deals from '../components/Deals'
 import RecentProducts from '../components/RecentProducts'
+import Navbar from '../components/Navbar'
 
-export default function Home({product,Loading,error}) {
+export default function Home({product,error,Loading}) {
 
     
-  return (
+return (
     <>
     <Navbar />
     <div className='w-full p-5 h-auto flex flex-col  gap-10 max-w-100 sm:max-w-270'>

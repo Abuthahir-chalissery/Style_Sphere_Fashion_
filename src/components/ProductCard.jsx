@@ -1,5 +1,6 @@
 
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function ProductCard({product}) {
 
@@ -8,7 +9,7 @@ export default function ProductCard({product}) {
         {product.map(item => (
         <div key={item.id} className=' w-full scale-100 hover:scale-104 hover:bg-gray-400 transition delay-5 ease-in  bg-gray-300  h-auto p-3  rounded-md justify-between items-start  flex flex-col gap-5 '>
           <div className='w-full h-auto flex justify-center items-start'>
-            <img className='product-img  cursor-pointer' src={item.image} alt="" />
+          <Link to={'/product-lists/:id'}><img className='product-img  cursor-pointer' src={item.image} alt="" /></Link>
           </div>
           <div className='w-full flex flex-col h-full text-start gap-2 '>
             <h1 className='text-xs md:text-base  text-gray-800'>{item.title}</h1>
