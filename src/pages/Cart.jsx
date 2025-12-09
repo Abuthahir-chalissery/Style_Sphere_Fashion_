@@ -25,20 +25,7 @@ return (
                             </div>
                             <hr className='text-gray-400'/>
                         </div>
-                        <div className='w-full flex flex-col gap-5'>
-                            <div className='flex justify-between items-center'>
-                                <img className='size-30 rounded-md' src="/assets/t-shirt-2.png" alt="" />
-                                <h1 className='text-gray-800 font-semibold' >Color T-shirt</h1>
-                                <h1 className='text-xl font-semibold'>₹400</h1>
-                                <div className='flex gap-3 text-xl items-cente justify-center'>
-                                    <p className='font-bold text-3xl cursor-pointer rounded-3xl size-6 flex justify-center items-center'>-</p>
-                                    <p className='border pl-5 pr-5' >1</p>
-                                    <p className='font-bold text-3xl cursor-pointer rounded-3xl size-6 flex justify-center items-center'>+</p>
-                                </div>
-                                <button className='border p-1 pl-2 pr-2 rounded-md bg-black text-white'>Remove</button>
-                            </div>
-                            <hr className='text-gray-400'/>
-                        </div>
+
                         
                     </div>
                     
