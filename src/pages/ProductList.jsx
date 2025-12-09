@@ -3,7 +3,7 @@ import ProductCard from '../components/ProductCard'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 
-export default function ProductList({product,error}) {
+export default function ProductList({product,error,loading}) {
   return (
     <>
         <Navbar/>
@@ -19,7 +19,7 @@ export default function ProductList({product,error}) {
                 <h1 className={error ? 'text-center w-50 rounded-xs p-1 text-white bg-black' : ''} >{error}</h1>
             </div>
             <div className='w-full h-auto gap-2 md:gap-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
-                <ProductCard product={product} />
+                <ProductCard product={product} loading={loading}/>
             </div>
             
         </div>

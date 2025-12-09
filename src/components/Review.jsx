@@ -55,7 +55,7 @@ export default function Rating({ rating }) {
           </svg>
         ))}
   
-        <p className="ms-2 text-sm font-medium text-body text-gray-600">
+        <p className="ms-2 text-xs sm:text-sm font-medium text-body text-gray-600">
           ({rating}) Customer reviews
         </p>
   

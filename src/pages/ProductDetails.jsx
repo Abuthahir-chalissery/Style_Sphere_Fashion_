@@ -2,19 +2,20 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Rating from '../components/Review'
+import { Link } from 'react-router-dom'
 
 
-export default function ProductDetails({}) {
+export default function ProductDetails({product}) {
   return (
     <>
         <Navbar/>
         <div className='w-full h-auto flex justify-center p-2 sm:p-5 overflow-hidden' >
-            <div className='w-full h-auto  grid grid-rows-1  sm:grid-cols-7 gap-10 sm:gap-5  justify-center max-w-100 sm:max-w-270'>
+            <div className=' w-full h-auto  grid grid-rows-1  sm:grid-cols-7 gap-10 sm:gap-5  justify-center max-w-100 sm:max-w-270'>
                 {/* 1 */}
                 <div className='w-full grid  gap-5 grid-cols-4 gap col-span-4 '>
                     
                     <div className='w-full flex flex-col items-center gap-3'>
-                        <img className='object-cover hover:border size-14 sm:size-25 cursor-pointer' src="/post1.webp" alt="" />
+                        <img className='object-cover hover:border size-14 sm:size-25 cursor-pointer' src="/post3.webp" alt="" />
                         <img className='object-cover hover:border size-14 sm:size-25 cursor-pointer' src="/post2.webp" alt="" />
                         <img className='object-cover hover:border size-14 sm:size-25 cursor-pointer' src="/post3.webp" alt="" />
                         <img className='object-cover hover:border size-14 sm:size-25 cursor-pointer' src="/post4.webp" alt="" />
@@ -23,15 +24,15 @@ export default function ProductDetails({}) {
                     {/* Main image */}
                     <div className='w-full col-span-3 flex flex-col items-center gap-5'>
                         <div>
-                            <img  src="/post1.webp" alt="" />
+                            <img  src="/post2.webp" alt="" />
                         </div>
 
-                        <div className='w-full flex gap-5'>
-                            <button className='w-full border cursor-pointer text-xl p-2 text-center items-center rounded-md flex justify-center gap-2 font-semibold'>Add to Cart <p><img className='size-6' src="/cart2.png" alt="" /></p></button>
-                            <button className=' bg-black h-auto text-center text-white font-semibold cursor-pointer text-xl w-full p-2 rounded-md'>Buy Now</button>
+                        <div className='w-full  flex gap-5 text-nowrap'>
+                            <Link className='w-full' to={'/cart'} ><button className='w-full border cursor-pointer text-sm p-1 sm:text-xl sm:p-2 text-center items-center rounded-md flex justify-center gap-1 sm:gap-2 font-semibold'>Add to Cart <p><img className='size-4 sm:size-6' src="/cart2.png" alt="" /></p></button></Link>
+                            <button className='  bg-black h-auto text-center text-white font-semibold cursor-pointer sm:text-xl w-full p-1 sm:p-2 rounded-md'>Buy Now</button>
                         </div>
 
-                        <div className='w-full flex gap-3 items-center'>
+                        <div className='w-full flex sm:gap-3 items-center'>
                             <h1 className='font-semibold text-center'>Colors </h1>
                             <div className='flex gap-3  p-2 '>
                                 <div className='size-8 hover:border bg-green-400 cursor-pointer rounded-3xl'></div>
