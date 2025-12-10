@@ -7,10 +7,21 @@ export default function Navbar() {
         <div className='w-full  flex flex-col p-5 gap-10 max-w-100 sm:max-w-270'>
             {/* Logo and Search button */}
             <div className=' flex justify-between'>
-                <Link to={'/'}><h1 className='text- sm:text-3xl font-semibold unbounded-logo-text cursor-pointer'>STYLE-SPHERE</h1></Link>
-                <div className='w-30 sm:w-auto flex sm:h-9 border border-gray-500 rounded-3xl pl-1 pr-1 sm:pl-5 sm:pr-2 justify-center items-center'>
-                    <input className='w-full  text-sm  outline-none' type="text" placeholder='Search...' />
-                    <img className='cursor-pointer size-5 sm:size-6' src="/search.png" alt="" />
+                <Link to={'/'}><h1 className='text-nowrap sm:text-3xl font-semibold unbounded-logo-text cursor-pointer'>STYLE-SPHERE</h1></Link>
+                <div className='w-40 sm:w-auto gap-3 flex  items-center'>
+
+                    {/* Car */}
+                    <div className='w-full  flex justify-end relative'>
+                        <Link to={'/cart'} ><img className='size-6' src="/cart.png" alt=""  /></Link>
+                        <div className='size-4.5 flex justify-center items-center bg-red-500 rounded-2xl absolute end-2.5  top-2.5'>
+                            <h1 className='text-xs text-white'>3</h1>
+                        </div>
+                    </div>
+                    
+                    <div className='border gap-2 border-gray-500 sm:h-9 rounded-3xl flex pl-1 pr-1 sm:pl-5 items-center sm:pr-2 '>
+                        <input className='w-full  text-sm  outline-none' type="text" placeholder='Search...' />
+                        <img className='cursor-pointer size-5 sm:size-6' src="/search.png" alt="" />
+                    </div>
                 </div>
             </div>
 

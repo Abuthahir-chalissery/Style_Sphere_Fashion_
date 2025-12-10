@@ -20,7 +20,7 @@ export default function RecentProducts({product,error}) {
       
           <div className='w-full h-auto gap-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
               
-                <ProductCard product={product.slice(0,8)}/>
+                <ProductCard product={product.slice(0,4)}/>
           </div>  
       </div>
     </>

@@ -8,6 +8,7 @@ export const Products = [
         ratings:4.6,
         freeDelivery: true,
         price: 500,
+        slug: 'white-t-shirt',
     },
     
     {
@@ -17,14 +18,16 @@ export const Products = [
         ratings:3.6,
         freeDelivery: false,
         price: 499,
+        slug: 'green-t-shirt',
     },
     {
         id:3,
         title: "White Full sleeve t-shirt",
         image: 't-shirt-3',
         ratings:3.6,
-        freeDelivery: false,
+        freeDelivery: true,
         price: 600,
+        slug: 'white-full-sleeve-t-shirt',
     },
     {
         id:4,
@@ -33,6 +36,7 @@ export const Products = [
         ratings:3.6,
         freeDelivery: false,
         price: 560,
+        slug: 'polo-black-t-shirt',
     },
     {
         id:5,
@@ -41,6 +45,7 @@ export const Products = [
         ratings:3.6,
         freeDelivery: false,
         price: 499,
+        slug: 'black-t-shirt',
     },
     {
         id:6,
@@ -49,6 +54,7 @@ export const Products = [
         ratings:3.6,
         freeDelivery: false,
         price: 499,
+        slug: 'gray-t-shirt',
     },
     
 

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 
 export default function ProductCard({product,Loading}) {
 
+
   // if (freeDelivery == true){
   //   freeDelivery = 'free delivery'
   // }else{

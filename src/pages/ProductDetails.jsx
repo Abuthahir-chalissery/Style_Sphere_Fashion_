@@ -2,11 +2,19 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Rating from '../components/Review'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
+import { Products } from '../Products/Products'
 
 
-export default function ProductDetails({product}) {
-  return (
+export default function ProductDetails() {
+
+    const { id } = useParams();
+        const product = Products.find(p => p.id === Number(id))
+
+    
+
+    if (!product) return <h1>Product Not found</h1>
+return (
     <>
         <Navbar/>
         <div className='w-full h-auto flex justify-center p-2 sm:p-5 overflow-hidden' >
@@ -15,20 +23,20 @@ export default function ProductDetails({product}) {
                 <div className='w-full grid  gap-5 grid-cols-4 gap col-span-4 '>
                     
                     <div className='w-full flex flex-col items-center gap-3'>
+                        <img className='object-cover hover:border size-14 sm:size-25 cursor-pointer bg-gray-200 ' src={`/assets/${product.image}.png`} alt="" />
+                        {/* <img className='object-cover hover:border size-14 sm:size-25 cursor-pointer' src="/post2.webp" alt="" />
                         <img className='object-cover hover:border size-14 sm:size-25 cursor-pointer' src="/post3.webp" alt="" />
-                        <img className='object-cover hover:border size-14 sm:size-25 cursor-pointer' src="/post2.webp" alt="" />
-                        <img className='object-cover hover:border size-14 sm:size-25 cursor-pointer' src="/post3.webp" alt="" />
-                        <img className='object-cover hover:border size-14 sm:size-25 cursor-pointer' src="/post4.webp" alt="" />
+                        <img className='object-cover hover:border size-14 sm:size-25 cursor-pointer' src="/post4.webp" alt="" /> */}
                     </div>
 
                     {/* Main image */}
                     <div className='w-full col-span-3 flex flex-col items-center gap-5'>
                         <div>
-                            <img  src="/post2.webp" alt="" />
+                            <img  src={`/assets/${product.image}.png`} alt="" />
                         </div>
 
                         <div className='w-full  flex gap-5 text-nowrap'>
-                            <Link className='w-full' to={'/cart'} ><button className='w-full border cursor-pointer text-sm p-1 sm:text-xl sm:p-2 text-center items-center rounded-md flex justify-center gap-1 sm:gap-2 font-semibold'>Add to Cart <p><img className='size-4 sm:size-6' src="/cart2.png" alt="" /></p></button></Link>
+                            <button  className='w-full border cursor-pointer text-sm p-1 sm:text-xl sm:p-2 text-center items-center rounded-md flex justify-center gap-1 sm:gap-2 font-semibold' >Add to Cart <p><img className='size-4 sm:size-6' src="/cart2.png" alt="" /></p></button>
                             <button className='  bg-black h-auto text-center text-white font-semibold cursor-pointer sm:text-xl w-full p-1 sm:p-2 rounded-md'>Buy Now</button>
                         </div>
 
@@ -47,11 +55,11 @@ export default function ProductDetails({product}) {
                 {/* 2 */}
                 <div className='w-full col-span-4 sm:col-span-3 flex flex-col  gap-5 sm:pl-10'>
                     <div className='border border-gray-500 p-4 flex flex-col gap-2 bg-white rounded-xl'>
-                        <h1 className='text-xl text-gray-500'>Printed Shirt</h1>
-                        <h1 className='text-2xl font-semibold'>₹199</h1>
+                        <h1 className='text-xl text-gray-500'>{product.title}</h1>
+                        <h1 className='text-2xl font-semibold'>₹{product.price}</h1>
                         {/* Review star */}
-                        <Rating rating={3.5} />
-                        <span className='w-19 text-center font-semibold text-[10px] rounded-2xl  bg-gray-300 '>Free Delivery</span>
+                        <Rating rating={product.ratings} />
+                        <span className='w-19 text-center font-semibold text-[10px] rounded-2xl  bg-green-300 '>{product.freeDelivery ? "Free Delivery" : "Delivery ₹50"}</span>
                     </div>
 
                     {/* size */}
