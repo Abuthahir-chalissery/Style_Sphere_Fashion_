@@ -10,6 +10,8 @@ import Loading from './components/Loading'
 import ProductDetails from './pages/ProductDetails'
 import { Products } from './Products/Products'
 import Cart from './pages/Cart'
+import LoginPage from './pages/LoginPage'
+import SignUpPage from './pages/SignUpPage'
 
 function App() {
 
@@ -60,6 +62,8 @@ function App() {
               <Route exact path='/product-lists'  element={<ProductList product={product} loading={loading}/>} />
               <Route path='/product-lists/:id' element={<ProductDetails/>} />
               <Route path='/cart' element={<Cart/>} />
+              <Route path='/login' element={<LoginPage/>}/>
+              <Route path='/signup' element={<SignUpPage/>} />
             </Routes>
           </Router>
         </div>
