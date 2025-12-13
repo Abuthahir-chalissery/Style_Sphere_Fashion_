@@ -6,7 +6,7 @@ import { Link, useParams } from 'react-router-dom'
 import { Products } from '../Products/Products'
 
 
-export default function ProductDetails() {
+export default function ProductDetails({ addToCart }) {
 
     const { id } = useParams();
         const product = Products.find(p => p.id === Number(id))
@@ -14,6 +14,9 @@ export default function ProductDetails() {
     
 
     if (!product) return <h1>Product Not found</h1>
+
+    
+    
 return (
     <>
         <Navbar/>
@@ -36,7 +39,7 @@ return (
                         </div>
 
                         <div className='w-full  flex gap-5 text-nowrap'>
-                            <button  className='w-full border cursor-pointer text-sm p-1 sm:text-xl sm:p-2 text-center items-center rounded-md flex justify-center gap-1 sm:gap-2 font-semibold' >Add to Cart <p><img className='size-4 sm:size-6' src="/cart2.png" alt="" /></p></button>
+                            <button onClick={() => addToCart(product)} className='w-full border cursor-pointer text-sm p-1 sm:text-xl sm:p-2 text-center items-center rounded-md flex justify-center gap-1 sm:gap-2 font-semibold' >Add to Cart <p><img className='size-4 sm:size-6' src="/cart2.png" alt="" /></p></button>
                             <button className='  bg-black h-auto text-center text-white font-semibold cursor-pointer sm:text-xl w-full p-1 sm:p-2 rounded-md'>Buy Now</button>
                         </div>
 

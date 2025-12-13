@@ -10,14 +10,14 @@ import Loading from './components/Loading'
 import ProductDetails from './pages/ProductDetails'
 import { Products } from './Products/Products'
 import Cart from './pages/Cart'
-import LoginPage from './pages/LoginPage'
-import SignUpPage from './pages/SignUpPage'
 
 function App() {
 
   const [product, setProducts] = useState(Products)
   // const [error , setError] = useState(null)
   const [loading, setLoading] = useState(true)
+  const [cart, setCart] = useState([])
+
 
 
   // useEffect(()=> {
@@ -51,6 +51,22 @@ function App() {
   if (loading) return <Loading/>
 
 
+  // Add to cart
+  const addToCart = (product) => {
+    setCart(prev => {
+      const existing = prev.find(item => item.id === product.id)
+
+      if (existing){
+        return prev.map(item =>
+          item.id === product.id? {...item, qty: item.qty + 1} : item
+        )
+      }
+      return [...prev, { ...product,qty:1}]
+    })
+  }
+  
+
+
 
   return (
     <>
@@ -60,10 +76,8 @@ function App() {
             <Routes>
               <Route exact path='/' element={<Home product={product} loading={loading}/>} />
               <Route exact path='/product-lists'  element={<ProductList product={product} loading={loading}/>} />
-              <Route path='/product-lists/:id' element={<ProductDetails/>} />
-              <Route path='/cart' element={<Cart/>} />
-              <Route path='/login' element={<LoginPage/>}/>
-              <Route path='/signup' element={<SignUpPage/>} />
+              <Route path='/product-lists/:id' element={<ProductDetails addToCart={addToCart}/>} />
+              <Route path='/cart' element={<Cart cart={cart} setCart={setCart} />} />
             </Routes>
           </Router>
         </div>
