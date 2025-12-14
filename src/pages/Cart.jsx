@@ -45,7 +45,7 @@ return (
                                     <p className='border pl-5 pr-5' >{item.qty}</p>
                                     <p className='font-bold text-3xl cursor-pointer rounded-3xl size-6 flex justify-center items-center' onClick={() => increaseQty(item.id)}>+</p>
                                 </div>
-                                <button className='border p-1 pl-2 pr-2 rounded-md bg-black text-white' onClick={() => removeItem(item.id)}>Remove</button>
+                                <button className='cursor-pointer border p-1 pl-2 pr-2 rounded-md bg-black text-white' onClick={() => removeItem(item.id)}>Remove</button>
                             </div>
                             ))}
                             <hr className='text-gray-400'/>
